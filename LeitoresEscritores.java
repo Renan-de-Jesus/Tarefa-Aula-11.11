@@ -256,26 +256,3 @@ public class LeitoresEscritores {
         }
     }
 }
-
-/* READWRITELOCK:
- * 
- * Regras de acesso:
- * 1. Múltiplos threads podem ter read lock simultaneamente
- * 2. Apenas 1 thread pode ter write lock
- * 3. Write lock é exclusivo (bloqueia reads e writes)
- * 4. Read lock bloqueia apenas writes
- * 
- * Implementação típica:
- * - Contador de leitores ativos
- * - Flag de escritor ativo
- * - Fila de espera (leitores e escritores)
- * 
- * Políticas de fairness:
- * - Fair: Ordem de chegada (evita starvation)
- * - Non-fair: Pode favorecer reads (mais throughput)
- * 
- * Quando NÃO usar:
- * - Escritas muito frequentes
- * - Seções críticas muito curtas
- * - Overhead do RWLock domina
- */

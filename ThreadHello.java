@@ -44,13 +44,3 @@ public class ThreadHello {
         System.out.println("5. join() faz a main aguardar a conclusão");
     }
 }
-
-/* EXPLICAÇÃO DO CICLO DE VIDA:
- * 
- * 1. NEW: Quando criamos 'new Thread()', a thread está no estado NEW
- * 2. RUNNABLE: Ao chamar start(), a thread vai para o estado RUNNABLE
- *    (pronta para ser executada pelo escalonador)
- * 3. RUNNING: O escalonador do SO escolhe a thread para executar
- * 4. TERMINATED: Após o método run() terminar, a thread morre
- * 5. join(): Faz a thread chamadora (main) esperar a conclusão desta thread
- */

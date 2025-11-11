@@ -179,29 +179,3 @@ public class MonteCarlo {
         return String.valueOf(num);
     }
 }
-
-/* MÉTODO MONTE CARLO PARA π:
- * 
- * Geometria:
- * - Quadrado unitário [0,1]×[0,1] tem área = 1
- * - Círculo raio 0.5 centrado em (0.5, 0.5) tem área = π×(0.5)² = π/4
- * - Círculo está inscrito no quadrado
- * 
- * Estimativa:
- * - Sortear N pontos aleatórios no quadrado
- * - Contar quantos caem dentro do círculo (M)
- * - Razão M/N ≈ (π/4) / 1 = π/4
- * - Logo: π ≈ 4 × (M/N)
- * 
- * Paralelização:
- * - Cada thread sorteia K pontos independentemente
- * - Usa seed diferente para garantir independência
- * - Soma contadores no final (reduce)
- * - Operação embaraçosamente paralela (sem dependências)
- * 
- * Características:
- * - Trabalho balanceado automaticamente
- * - Sem comunicação entre threads
- * - Speedup quase linear com threads suficientes
- * - Ideal para demonstrar benefícios do paralelismo
- */

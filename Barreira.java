@@ -99,30 +99,3 @@ public class Barreira {
         System.out.println("- Coordenação de workers em pipelines");
     }
 }
-
-/* EXPLICAÇÃO DA BARREIRA:
- * 
- * CyclicBarrier funciona como um ponto de encontro:
- * 
- * 1. Cada thread chama barreira.await()
- * 2. A thread BLOQUEIA até que todas as N threads chamem await()
- * 3. Quando a última chega, TODAS são liberadas simultaneamente
- * 4. "Cyclic" = pode ser reutilizada para múltiplas fases
- * 
- * Diferença de CountDownLatch:
- * - CountDownLatch: conta regressiva, uma vez só
- * - CyclicBarrier: ponto de encontro, reutilizável
- * 
- * Exemplo de saída esperada:
- * [Thread 0] Fase 1...
- * [Thread 0] Aguardando barreira...
- * [Thread 1] Fase 1...
- * [Thread 1] Aguardando barreira...
- * ...
- * [Thread 4] Fase 1...
- * [Thread 4] Aguardando barreira...
- * >>> BARREIRA ALCANÇADA!
- * [Thread 0] Iniciando Fase 2!
- * [Thread 1] Iniciando Fase 2!
- * ...
- */

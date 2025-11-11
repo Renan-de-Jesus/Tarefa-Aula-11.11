@@ -220,22 +220,3 @@ public class ThreadPool {
         return (tempos[0] + tempos[1] + tempos[2]) / 3;
     }
 }
-
-/* EXECUTORSERVICE:
- * 
- * Vantagens do pool:
- * 1. Reutilização: Threads não são destruídas
- * 2. Controle: Limita concorrência máxima
- * 3. Gerenciamento: Trata shutdown, timeouts, etc
- * 4. Performance: Reduz overhead drasticamente
- * 
- * Overhead de criar thread:
- * - Alocar stack (tipicamente 1MB)
- * - Registrar no SO
- * - Inicializar estruturas internas
- * - ~50-200 μs por thread
- * 
- * Com 1000 tarefas:
- * - Criar threads: ~50-200 ms só de overhead!
- * - Pool: overhead desprezível (threads já existem)
- */

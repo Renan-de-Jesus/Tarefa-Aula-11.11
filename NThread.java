@@ -85,25 +85,5 @@ public class NThread {
     }
 }
 
-/* COMO PASSAR DADOS PARA UMA THREAD EM JAVA:
- * 
- * 1. Via Construtor (método usado acima):
- *    - Criar uma classe que implementa Runnable
- *    - Adicionar campos privados para armazenar os dados
- *    - Criar construtor que recebe e armazena os dados
- *    - Usar os dados no método run()
- * 
- * 2. Via Lambda (alternativa moderna):
- *    Thread t = new Thread(() -> {
- *        System.out.println("Index: " + i);
- *    });
- *    Obs: 'i' precisa ser final ou effectively final
- * 
- * 3. Via classe anônima:
- *    final int idx = i;
- *    Thread t = new Thread(new Runnable() {
- *        public void run() {
- *            System.out.println("Index: " + idx);
- *        }
- *    });
- */
+
+ 

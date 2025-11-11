@@ -89,23 +89,3 @@ public class RaceCondition {
         System.out.println("milhares de incrementos são perdidos por race condition!");
     }
 }
-
-/* ANÁLISE DA RACE CONDITION:
- * 
- * A instrução "contador++" parece atômica mas NÃO É!
- * 
- * Em bytecode Java (aproximado):
- *   getstatic contador    // Ler valor
- *   iconst_1             // Constante 1
- *   iadd                 // Somar
- *   putstatic contador    // Escrever
- * 
- * Se múltiplas threads executam isso simultaneamente,
- * podem ler o mesmo valor, incrementar, e sobrescrever
- * uma à outra - perdendo incrementos.
- * 
- * Resultados típicos com 4 threads × 1M incrementos:
- * - Esperado: 4.000.000
- * - Obtido: ~2.500.000 a 3.800.000 (varia a cada execução)
- * - Perda: 5% a 40% dos incrementos
- */

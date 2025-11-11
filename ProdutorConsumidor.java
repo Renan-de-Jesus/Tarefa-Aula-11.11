@@ -182,21 +182,3 @@ public class ProdutorConsumidor {
         System.out.println("5. Poison pill pattern: Sinalização elegante de término");
     }
 }
-
-/* BLOCKINGQUEUE:
- * 
- * Métodos principais:
- * - put(E e): Insere, espera se cheia
- * - take(): Remove, espera se vazia
- * - offer(E e): Insere, retorna false se cheia
- * - poll(): Remove, retorna null se vazia
- * 
- * Implementações:
- * - LinkedBlockingQueue: Lista encadeada, capacidade opcional
- * - ArrayBlockingQueue: Array fixo, capacidade obrigatória
- * - PriorityBlockingQueue: Heap, sem limite
- * 
- * POISON PILL:
- * Item especial que sinaliza fim da produção.
- * Consumidor o reconhece e reinsere para outros consumidores.
- */
